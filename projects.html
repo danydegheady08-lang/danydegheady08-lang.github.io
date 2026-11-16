@@ -22,13 +22,99 @@
 <main>
 <section class="pagehead">
   <div class="pagehead-in reveal">
-    <h1>What I built, and <em>what comes next.</em></h1>
-    <p>Each project has its code on GitHub and a written report as PDF. The spark plug line at the bottom is the project I am starting now.</p>
+    <h1>What I <em>built.</em></h1>
+    <p>The final project first: a spark plug line with an operator screen, a live dashboard and a maintenance experiment. Below it, the course projects that led there.</p>
   </div>
 </section>
 
-<section class="sec cream">
+<section class="sec cream" id="final-project" style="padding-bottom:40px">
+  <span id="spark-plug"></span>
   <div class="sec-in">
+    <div class="reveal" style="max-width:820px">
+      <div class="kicker" style="font-size:13px;color:var(--gold-deep);margin-bottom:14px">Final project &middot; Advanced Programming</div>
+      <h2>Spark plug production line <em>SP1</em></h2>
+      <p class="plain" style="margin-top:22px">A simulated make-to-order line that produces spark plugs for business customers who sell them under their own brand. Seven stations, a Python back end that decides when and why a plug is defective, a Tkinter operator screen, InfluxDB and a Grafana dashboard that sets itself up with Docker Compose. On top: scrap cost and margin per customer order, predictive maintenance with work orders, and lot traceability for recalls.</p>
+      <div class="meta proj" style="display:flex;gap:26px;margin-top:26px;padding:0;border:0">
+        <a href="https://github.com/danydegheady08-lang/sparkplug-line">Code on GitHub</a>
+        <a href="homework/HW5_Product_Definition_Spark_Plug.pdf">Product definition</a>
+      </div>
+    </div>
+    <figure class="shot reveal" style="margin-top:56px">
+      <img src="assets/img/sp-line.jpg" alt="Line concept: seven stations with bins between them and the check each station performs">
+      <figcaption>The line: three component stations, welding, assembly, final QC and packaging, with bins of twelve parts between them</figcaption>
+    </figure>
+
+    <article class="reveal proj" style="margin-top:72px;padding-top:72px;border-top:1px solid var(--rule)">
+      <figure class="shot">
+        <img src="assets/img/sp-hmi-running.jpg" alt="Operator screen of the spark plug line while running">
+        <figcaption>Operator screen while the line runs</figcaption>
+      </figure>
+      <div>
+        <div class="kicker">When and why a plug is defective</div>
+        <h3>Every reject has a reason</h3>
+        <p>Each station measures what it made. A failed check stores the reason code, the measured value and the scrap cost, for example a gap of 0.7261 mm at final QC, outside 0.80 &plusmn; 0.05 mm. Tool wear raises the defect rate, which links quality to maintenance and to money.</p>
+        <ul>
+          <li>Seven reason codes, from THREAD_OUT_OF_TOLERANCE to GAP_OUT_OF_TOLERANCE</li>
+          <li>A defect found late costs more: 0.15 EUR at the electrode station, 1.10 EUR at final QC</li>
+          <li>Every shipped plug is traceable to its material batches and its customer</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="reveal proj flip">
+      <figure class="shot">
+        <img src="assets/img/sp-hmi-fault.jpg" alt="Operator screen showing a fault at the assembly press">
+        <figcaption>A breakdown: the line stops until RESET starts the repair</figcaption>
+      </figure>
+      <div>
+        <div class="kicker">Operator screen</div>
+        <h3>Grey when normal, colour when it matters</h3>
+        <p>The HMI follows the high performance HMI idea of ISA-101: the normal state is calm grey, and colour only marks what needs attention. Red for a fault, amber for a warning or a blocked station, blue for planned maintenance.</p>
+        <ul>
+          <li>START, STOP and RESET with clear refusals ("press RESET first")</li>
+          <li>Alarm banner with station, fault code and work order</li>
+          <li>Order margin, OEE and a recall search beside the line</li>
+        </ul>
+      </div>
+    </article>
+    <article class="reveal proj" style="grid-template-columns:1fr">
+      <div>
+        <div class="kicker">Database and dashboard</div>
+        <h3>Every second in InfluxDB, every panel set up by itself</h3>
+        <p style="max-width:760px">The back end writes one point per second for the line and each station, plus one per reject, gap measurement, work order and finished order. Grafana loads its data source and the 18 panel dashboard from files at start-up, so <code style="font-size:13px">docker compose up</code> is all it takes.</p>
+        <figure class="shot" style="margin-top:28px">
+          <img src="assets/img/sp-grafana.jpg" alt="Grafana dashboard of the spark plug line after an eight hour shift">
+          <figcaption>An eight hour shift: OEE, line state, every measured gap, rejects by reason, order margins, tool wear and work orders</figcaption>
+        </figure>
+      </div>
+    </article>
+    <article class="reveal proj" style="grid-template-columns:1fr">
+      <div>
+        <div class="kicker">Experiment</div>
+        <h3>Does predictive maintenance pay off?</h3>
+        <p style="max-width:760px">Both strategies ran the same 20 shifts of eight hours. Servicing a tool at 40 % of its life beat repairing it after a breakdown in all 20 shifts. Servicing even earlier keeps raising OEE, because planned stops do not count against it, but the margin falls again: OEE alone would over-maintain the line.</p>
+        <figure class="shot" style="margin:28px 0">
+          <img src="assets/img/sp-sweep.jpg" alt="Margin and OEE against the maintenance planning threshold">
+          <figcaption>Margin and OEE per shift against the planning threshold; dashed line: reactive maintenance</figcaption>
+        </figure>
+        <table class="results">
+          <thead><tr><th>Mean of 20 shifts</th><th>Predictive</th><th>Reactive</th></tr></thead>
+          <tbody>
+            <tr><td>Availability</td><td>92.6 %</td><td>74.3 %</td></tr>
+            <tr><td>OEE</td><td>85.1 %</td><td>64.9 %</td></tr>
+            <tr><td>Breakdowns per shift</td><td>1.9</td><td>6.6</td></tr>
+            <tr><td>Plugs shipped</td><td>4,330</td><td>3,892</td></tr>
+            <tr><td>Margin per shift</td><td>4,288 EUR</td><td>3,712 EUR</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec cream" style="padding-top:40px">
+  <div class="sec-in">
+    <h3 class="small-h reveal" style="margin-bottom:40px">Course projects</h3>
 
     <article class="reveal proj" id="production-line">
       <figure class="shot">
@@ -82,25 +168,6 @@
           <a href="https://github.com/danydegheady08-lang/my-recipes">Code</a>
           <a href="homework/HW3_Git_Recipes.pdf">Report</a>
         </div>
-      </div>
-    </article>
-
-    <article class="reveal proj flip" id="spark-plug">
-      <figure class="shot">
-        <img src="assets/img/hmi-bins-full.jpg" alt="Operator screen of the ball pen line, the starting point for the spark plug line">
-        <figcaption>Operator screen of the ball pen line, which this project builds on</figcaption>
-      </figure>
-      <div>
-        <div class="kicker">Next &middot; In progress</div>
-        <h3>Spark plug production line</h3>
-        <p>The course final project. A made-to-order line for business customers who sell plugs under their own brand. Seven stations: shell, insulator, center electrode, ground electrode, assembly, final quality control and packaging.</p>
-        <ul>
-          <li>Python backend that decides when and why a plug is defective, such as an out-of-tolerance electrode gap</li>
-          <li>Operator screen with Start, Stop, Reset, line state and error display</li>
-          <li>InfluxDB and a Grafana dashboard</li>
-          <li>Extras: scrap cost and margin per order, predictive maintenance, lot traceability for recalls</li>
-        </ul>
-        <div class="meta"><a href="homework/HW5_Product_Definition_Spark_Plug.pdf">Product definition</a></div>
       </div>
     </article>
 
