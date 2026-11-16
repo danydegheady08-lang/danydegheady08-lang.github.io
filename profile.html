@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile | Dany Degheady</title>
+<meta name="description" content="Profile of Dany Degheady, Mechatronics Engineering student at SRH Hochschule Berlin.">
+<meta name="theme-color" content="#0D1B3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="index.html">Dany Degheady</a>
+  <ul>
+    <li><a href="index.html">Portfolio</a></li>
+    <li><a href="profile.html" class="active">Profile</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="homework.html">Homework</a></li>
+    <li><a href="https://github.com/danydegheady08-lang">GitHub</a></li>
+  </ul>
+</header>
+<main>
+<section class="pagehead">
+  <div class="pagehead-in reveal">
+    <h1>Where something physical happens, and a program <em>decides what it means.</em></h1>
+    <p>Mechatronics Engineering student in Berlin, drawn to the software side of production systems.</p>
+  </div>
+</section>
+
+<section class="sec cream">
+  <div class="sec-in split reveal">
+    <div>
+      <h2 style="margin-bottom:36px">Dany <em>Degheady</em></h2>
+      <div class="facts">
+        <div class="f"><span class="k">Studying</span><span class="val">Mechatronics Engineering</span></div>
+        <div class="f"><span class="k">University</span><span class="val">SRH Hochschule Berlin</span></div>
+        <div class="f"><span class="k">Location</span><span class="val">Berlin, Germany</span></div>
+        <div class="f"><span class="k">Focus</span><span class="val">Production software, data and dashboards</span></div>
+        <div class="f"><span class="k">Code</span><span class="val"><a href="https://github.com/danydegheady08-lang">github.com/danydegheady08-lang</a></span></div>
+      </div>
+    </div>
+    <div>
+      <div class="prose">
+        <p>I study Mechatronics Engineering at SRH Hochschule Berlin and I am in my final semester. Mechatronics combines mechanics, electronics and software, and over the degree I have been drawn most to the software side of production systems: how a line is controlled, how its state is recorded, and how an operator or a manager can see what is going on.</p>
+        <p>In the Advanced Programming course I built a simulated ball pen production line in Python, with an operator screen, a time series database and a Grafana dashboard. I also practised version control on a Space Invaders game and a recipe collection. My next project is a simulated spark plug line, described on the <a href="projects.html#spark-plug" style="border-bottom:1px solid var(--gold)">projects page</a>.</p>
+      </div>
+
+      <div class="sub-h">Path so far</div>
+      <div class="timeline">
+        <div class="t"><span class="when">Degree</span><div><b>Mechatronics Engineering</b><span>SRH Hochschule Berlin, final semester</span></div></div>
+        <div class="t"><span class="when">This course</span><div><b>Advanced Programming</b><span>Version control, tools, and a production line simulation with Grafana</span></div></div>
+        <div class="t"><span class="when">Next</span><div><b>Spark plug production line</b><span>Course final project, in progress</span></div></div>
+      </div>
+
+      <div class="sub-h">Tools</div>
+      <p class="plain">Python, Git and GitHub, state machines, Tkinter, InfluxDB, Flux, Grafana, Docker Compose, pytest.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot-site">
+  <div class="foot-in">
+    <div class="foot-top">
+      <a class="logo" href="index.html">Dany Degheady</a>
+      <ul>
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="homework.html">Homework</a></li>
+        <li><a href="https://github.com/danydegheady08-lang">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="foot-bot"><span>&copy; 2026 Dany Degheady</span><span>Advanced Programming, SRH Hochschule Berlin</span></div>
+  </div>
+</footer>
+<script>
+(function () {
+  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var els = document.querySelectorAll(".reveal");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+  document.documentElement.classList.add("js");
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>

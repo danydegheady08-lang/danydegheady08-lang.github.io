@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dany Degheady | Mechatronics Portfolio</title>
+<meta name="description" content="Portfolio of Dany Degheady, Mechatronics Engineering student at SRH Hochschule Berlin: production line simulation, Python, Grafana, InfluxDB.">
+<meta name="theme-color" content="#0D1B3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="index.html">Dany Degheady</a>
+  <ul>
+    <li><a href="index.html" class="active">Portfolio</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="homework.html">Homework</a></li>
+    <li><a href="https://github.com/danydegheady08-lang">GitHub</a></li>
+  </ul>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-in reveal">
+    <div>
+      <h1>Software that runs and <em>watches</em> a production line.</h1>
+      <p class="sub">Python backends, operator screens, time series data and live dashboards. This site collects my work for Advanced Programming, and the line I am building next: a simulated spark plug factory.</p>
+      <div class="actions">
+        <a class="btn" href="projects.html">See the projects</a>
+        <a class="link-u" href="homework.html">Homework reports</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec cream">
+  <div class="sec-in split reveal">
+    <div>
+      <h2>Three projects, <em>each with</em> its code and a report.</h2>
+      <p>Every project is on GitHub, and every report is a PDF on this site.</p>
+    </div>
+    <div class="list">
+      <div class="item">
+        <div class="num">01</div>
+        <div>
+          <h4>Ball pen production line</h4>
+          <p>A simulated line with a state machine, an operator screen, and a backend that writes one measurement per second to InfluxDB. A Grafana dashboard reads it live, with experiments on state weights and temperature coupling.</p>
+          <div class="meta"><a href="https://github.com/danydegheady08-lang/production-line">Code</a><a href="homework/HW6_Production_Line_Exercises.pdf">Report</a><span class="tagx">Python &middot; InfluxDB &middot; Grafana</span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">02</div>
+        <div>
+          <h4>Space Invaders versions</h4>
+          <p>A Pygame game developed in steps, with one Git branch per version, to practise branching and merging on something that runs.</p>
+          <div class="meta"><a href="https://github.com/danydegheady08-lang/space-invaders">Code</a><a href="homework/HW2_Space_Invaders_Versions.pdf">Report</a><span class="tagx">Python &middot; Pygame &middot; Git</span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">03</div>
+        <div>
+          <h4>my-recipes: version control practice</h4>
+          <p>The core Git workflow, commit by commit, on a small recipe collection. The report explains each command and what it changed.</p>
+          <div class="meta"><a href="https://github.com/danydegheady08-lang/my-recipes">Code</a><a href="homework/HW3_Git_Recipes.pdf">Report</a><span class="tagx">Git &middot; GitHub</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark">
+  <div class="sec-in split dark reveal">
+    <div>
+      <h2 class="on-dark">The spark plug <em>line.</em></h2>
+      <p>A made-to-order line for business customers who sell plugs under their own brand. Seven stations, one number that decides everything: the electrode gap.</p>
+      <div style="margin-top:34px"><a class="link-u" href="projects.html#spark-plug">Read the plan</a></div>
+    </div>
+    <div class="stations">
+      <div class="st"><span class="no">01</span><b>Shell</b><span>Cuts the thread on the steel blank</span></div>
+      <div class="st"><span class="no">02</span><b>Insulator</b><span>Presses and sinters the ceramic body</span></div>
+      <div class="st"><span class="no">03</span><b>Center electrode</b><span>Cuts and forms the electrode</span></div>
+      <div class="st"><span class="no">04</span><b>Ground electrode</b><span>Welds to the shell, sets the gap</span></div>
+      <div class="st"><span class="no">05</span><b>Assembly</b><span>Seals the insulator into the shell</span></div>
+      <div class="st"><span class="no">06</span><b>Final QC</b><span>Measures the gap, tests the plug</span></div>
+      <div class="st"><span class="no">07</span><b>Packaging</b><span>Packs the lot with the customer's brand and lot number</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec cream tight">
+  <div class="sec-in reveal">
+    <h3 class="small-h">Tools</h3>
+    <p class="plain">Python, Git and GitHub, state machines, Tkinter, InfluxDB, Flux, Grafana, Docker Compose, pytest, OEE and ISA-95 basics.</p>
+  </div>
+</section>
+</main>
+<footer class="foot-site">
+  <div class="foot-in">
+    <div class="foot-top">
+      <a class="logo" href="index.html">Dany Degheady</a>
+      <ul>
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="homework.html">Homework</a></li>
+        <li><a href="https://github.com/danydegheady08-lang">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="foot-bot"><span>&copy; 2026 Dany Degheady</span><span>Advanced Programming, SRH Hochschule Berlin</span></div>
+  </div>
+</footer>
+<script>
+(function () {
+  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var els = document.querySelectorAll(".reveal");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+  document.documentElement.classList.add("js");
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homework | Dany Degheady</title>
+<meta name="description" content="Weekly homework for Advanced Programming at SRH Hochschule Berlin, with reports and repositories.">
+<meta name="theme-color" content="#0D1B3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="index.html">Dany Degheady</a>
+  <ul>
+    <li><a href="index.html">Portfolio</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="homework.html" class="active">Homework</a></li>
+    <li><a href="https://github.com/danydegheady08-lang">GitHub</a></li>
+  </ul>
+</header>
+<main>
+<section class="pagehead">
+  <div class="pagehead-in reveal">
+    <h1>Weekly <em>homework.</em></h1>
+    <p>One row per assignment. Each report is a PDF hosted on this site, and each coding task links to its GitHub repository.</p>
+  </div>
+</section>
+
+<section class="sec cream" style="padding-top:84px">
+  <div class="sec-in">
+    <table class="hw reveal">
+      <thead><tr><th>No.</th><th>Assignment</th><th>What it covers</th><th>Links</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="id">HW1</td>
+          <td class="ttl"><b>Portfolio website</b><small>GitHub Pages</small></td>
+          <td class="desc">This site: portfolio, profile, project description, the next project (spark plug) and this homework page.</td>
+          <td class="lnk"><a href="index.html">Open site</a><a href="https://github.com/danydegheady08-lang/danydegheady08-lang.github.io">Repository</a></td>
+        </tr>
+        <tr>
+          <td class="id">HW2</td>
+          <td class="ttl"><b>Tools exercise and Git versions</b><small>Space Invaders</small></td>
+          <td class="desc">Pygame game changed in steps, one Git branch per version, five branches in total.</td>
+          <td class="lnk"><a href="homework/HW2_Space_Invaders_Versions.pdf">Report (PDF)</a><a href="https://github.com/danydegheady08-lang/space-invaders">Repository</a></td>
+        </tr>
+        <tr>
+          <td class="id">HW3</td>
+          <td class="ttl"><b>Git version control</b><small>my-recipes</small></td>
+          <td class="desc">Commits, branches, merging and pushing, practised on a recipe collection.</td>
+          <td class="lnk"><a href="homework/HW3_Git_Recipes.pdf">Report (PDF)</a><a href="https://github.com/danydegheady08-lang/my-recipes">Repository</a></td>
+        </tr>
+        <tr>
+          <td class="id">HW4</td>
+          <td class="ttl"><b>Grafana panel and extra variable</b><small>Week 5</small></td>
+          <td class="desc">New <code>vibration</code> field in the producer, a vibration panel, and a Line A / Line B dropdown variable.</td>
+          <td class="lnk"><a href="homework/HW4_Grafana_Panel_Extra_Variable.pdf">Report (PDF)</a><a href="https://github.com/danydegheady08-lang/production-line">Repository</a></td>
+        </tr>
+        <tr>
+          <td class="id">HW5</td>
+          <td class="ttl"><b>Product definition</b><small>Spark plug line</small></td>
+          <td class="desc">The product, seven stations, defect reasons, orders and money, and the signals the line will produce.</td>
+          <td class="lnk"><a href="homework/HW5_Product_Definition_Spark_Plug.pdf">Report (PDF)</a></td>
+        </tr>
+        <tr>
+          <td class="id">HW6</td>
+          <td class="ttl"><b>Production line exercises</b><small>Ball pen line</small></td>
+          <td class="desc">Backend, operator screen, InfluxDB, Docker Compose and Grafana dashboard, with experiments and measured results.</td>
+          <td class="lnk"><a href="homework/HW6_Production_Line_Exercises.pdf">Report (PDF)</a><a href="https://github.com/danydegheady08-lang/production-line">Repository</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+</main>
+<footer class="foot-site">
+  <div class="foot-in">
+    <div class="foot-top">
+      <a class="logo" href="index.html">Dany Degheady</a>
+      <ul>
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="homework.html">Homework</a></li>
+        <li><a href="https://github.com/danydegheady08-lang">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="foot-bot"><span>&copy; 2026 Dany Degheady</span><span>Advanced Programming, SRH Hochschule Berlin</span></div>
+  </div>
+</footer>
+<script>
+(function () {
+  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var els = document.querySelectorAll(".reveal");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+  document.documentElement.classList.add("js");
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>

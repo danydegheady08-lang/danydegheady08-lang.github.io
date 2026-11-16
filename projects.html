@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects | Dany Degheady</title>
+<meta name="description" content="Projects by Dany Degheady: ball pen production line, Space Invaders versions, Git recipes and the upcoming spark plug production line.">
+<meta name="theme-color" content="#0D1B3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="index.html">Dany Degheady</a>
+  <ul>
+    <li><a href="index.html">Portfolio</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="homework.html">Homework</a></li>
+    <li><a href="https://github.com/danydegheady08-lang">GitHub</a></li>
+  </ul>
+</header>
+<main>
+<section class="pagehead">
+  <div class="pagehead-in reveal">
+    <h1>What I built, and <em>what comes next.</em></h1>
+    <p>Each project has its code on GitHub and a written report as PDF. The spark plug line at the bottom is the project I am starting now.</p>
+  </div>
+</section>
+
+<section class="sec cream">
+  <div class="sec-in">
+
+    <article class="reveal proj" id="production-line">
+      <figure class="shot">
+        <img src="assets/img/grafana-line-a-vs-b.jpg" alt="Grafana dashboard comparing line A and line B">
+        <figcaption>Grafana dashboard, line A and line B</figcaption>
+      </figure>
+      <div>
+        <div class="kicker">01 &middot; Python &middot; InfluxDB &middot; Grafana &middot; Docker</div>
+        <h3>Ball pen production line</h3>
+        <p>A simulated production line with a state machine (productive, standby, unscheduled downtime), a Tkinter operator screen and a backend that writes one measurement per second to InfluxDB. A Grafana dashboard reads it live.</p>
+        <ul>
+          <li>Panels for machine state, temperature, parts counter and state share</li>
+          <li>Experiments with state weights and temperature coupling, with measured results</li>
+          <li>Week 5 extension: a vibration signal and a Line A / Line B dropdown variable</li>
+        </ul>
+        <div class="meta">
+          <a href="https://github.com/danydegheady08-lang/production-line">Code</a>
+          <a href="homework/HW6_Production_Line_Exercises.pdf">Report</a>
+          <a href="homework/HW4_Grafana_Panel_Extra_Variable.pdf">Grafana extension</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="reveal proj flip" id="space-invaders">
+      <div class="shot two">
+        <img src="assets/img/space-menu.jpg" alt="Space Invaders start screen">
+        <img src="assets/img/space-highscores.jpg" alt="Space Invaders high score screen">
+        <div class="cap">Start screen and high scores</div>
+      </div>
+      <div>
+        <div class="kicker">02 &middot; Python &middot; Pygame &middot; Git branches</div>
+        <h3>Space Invaders versions</h3>
+        <p>The tools exercise: take a small game, change it in steps, and keep every step as its own Git branch. The result is a repository with five branches that can be compared and merged.</p>
+        <ul>
+          <li>Start screen, score table and high score screen</li>
+          <li>One branch per feature, merged back into main</li>
+        </ul>
+        <div class="meta">
+          <a href="https://github.com/danydegheady08-lang/space-invaders">Code</a>
+          <a href="homework/HW2_Space_Invaders_Versions.pdf">Report</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="reveal proj" id="recipes" style="grid-template-columns:1fr">
+      <div style="max-width:720px">
+        <div class="kicker">03 &middot; Git &middot; GitHub</div>
+        <h3>my-recipes: version control practice</h3>
+        <p>A small recipe collection used to practise the core Git workflow: commits, branches, merges and pushing to GitHub. The report walks through each command and what it changed.</p>
+        <div class="meta">
+          <a href="https://github.com/danydegheady08-lang/my-recipes">Code</a>
+          <a href="homework/HW3_Git_Recipes.pdf">Report</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="reveal proj flip" id="spark-plug">
+      <figure class="shot">
+        <img src="assets/img/hmi-bins-full.jpg" alt="Operator screen of the ball pen line, the starting point for the spark plug line">
+        <figcaption>Operator screen of the ball pen line, which this project builds on</figcaption>
+      </figure>
+      <div>
+        <div class="kicker">Next &middot; In progress</div>
+        <h3>Spark plug production line</h3>
+        <p>The course final project. A made-to-order line for business customers who sell plugs under their own brand. Seven stations: shell, insulator, center electrode, ground electrode, assembly, final quality control and packaging.</p>
+        <ul>
+          <li>Python backend that decides when and why a plug is defective, such as an out-of-tolerance electrode gap</li>
+          <li>Operator screen with Start, Stop, Reset, line state and error display</li>
+          <li>InfluxDB and a Grafana dashboard</li>
+          <li>Extras: scrap cost and margin per order, predictive maintenance, lot traceability for recalls</li>
+        </ul>
+        <div class="meta"><a href="homework/HW5_Product_Definition_Spark_Plug.pdf">Product definition</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+</main>
+<footer class="foot-site">
+  <div class="foot-in">
+    <div class="foot-top">
+      <a class="logo" href="index.html">Dany Degheady</a>
+      <ul>
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="homework.html">Homework</a></li>
+        <li><a href="https://github.com/danydegheady08-lang">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="foot-bot"><span>&copy; 2026 Dany Degheady</span><span>Advanced Programming, SRH Hochschule Berlin</span></div>
+  </div>
+</footer>
+<script>
+(function () {
+  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var els = document.querySelectorAll(".reveal");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+  document.documentElement.classList.add("js");
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
